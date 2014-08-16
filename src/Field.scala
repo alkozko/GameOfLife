@@ -3,21 +3,21 @@ import scala.util.Random
 /**
  * Created by alkozko on 13.08.2014.
  */
-class LifeField(width:Int, height:Int, initialCount: Int) {
+class Field(width:Int, height:Int, initialCount: Int) {
 
   var state = Array.ofDim[Boolean](width, height);
   for (i <- 0 until initialCount)
   {
-      val position = Random.nextInt(width*height);
-      val cellX = position / width;
-      val cellY = position % height;
+    val position = Random.nextInt(width*height);
+    val cellX = position / width;
+    val cellY = position % height;
 
-      state(cellX)(cellY) = true;
+    state(cellX)(cellY) = true;
   }
 
-//  state(0)(0) = true;
-//  state(0)(1) = true;
-//  state(0)(2) = true;
+  //  state(0)(0) = true;
+  //  state(0)(1) = true;
+  //  state(0)(2) = true;
 
 
 

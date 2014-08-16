@@ -5,17 +5,17 @@ import com.sun.jmx.snmp.Timestamp
  */
 object Program {
   def main(args: Array[String]): Unit = {
-    val field = new LifeField(10,10,15);
+    val field = new Field(10,10,15);
     while (true)
     {
       printField(field);
-//      io.StdIn.readLine();
+      //      io.StdIn.readLine();
       field.toNextState;
       Thread.sleep(500);
     }
   }
 
-  def printField(field: LifeField) {
+  def printField(field: Field) {
     for (i <- 0 until 10) {
       for (j <- 0 until 10) {
         if (field.state(i)(j))
@@ -28,4 +28,3 @@ object Program {
     println("==" * 20)
   }
 }
-
