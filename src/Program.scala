@@ -16,14 +16,8 @@ object Program {
   }
 
   def printField(field: Field) {
-    for (i <- 0 until 10) {
-      for (j <- 0 until 10) {
-        if (field.state(i)(j))
-          print("■ ")
-        else
-          print("□ ");
-      }
-      println();
+    for (row <- field.state) {
+      println(row.map(x => if (x) "■ " else "□ ").mkString(""));
     }
     println("==" * 20)
   }
